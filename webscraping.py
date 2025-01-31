@@ -37,11 +37,10 @@ def extraer_productos(html):
                 imagen_url = 'https://books.toscrape.com/' + imagen_url.replace('./', '')
             productos.append((nombre, imagen_url))
 
-    # Debug final
     print(f"Productos encontrados: {len(productos)}")
     if len(productos) == 0:
         print("\nMostrando las primeras 200 caracteres del HTML para debug:")
-        print(html[:200])
+        print(html[:500])
         print("\nBuscando cualquier tag de imagen:")
         todas_imgs = re.findall(r'<img[^>]+>', html)
         print(f"Total de tags img encontrados: {len(todas_imgs)}")
@@ -60,7 +59,7 @@ def exportar_csv(productos, archivo_salida):
 
 # Ejecutar el script
 if __name__ == "__main__":
-    archivo_html = "BookstoScrapehtml.html"  # Cambia esto por el nombre de tu archivo HTML
+    archivo_html = "BookstoScrapehtml.html"  
     archivo_csv = "productos.csv"
 
     html = cargar_html(archivo_html)

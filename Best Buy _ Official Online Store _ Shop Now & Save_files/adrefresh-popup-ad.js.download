@@ -1,5 +1,0 @@
-/* eslint-disable */
-var e=document.createElement('div');
-e.id='cYBiNwCbFGqU';
-e.style.display='none';
-document.body.appendChild(e);
